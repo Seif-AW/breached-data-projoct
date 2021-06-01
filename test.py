@@ -13,10 +13,10 @@ while True:
     dehashed = subprocess.run(arg2, capture_output=True, shell=True, encoding="utf8")
     data = json.loads(dehashed.stdout)
     state = data['total']
-    print(a)
+#    print(a)
     if state != a : 
         pass # here to put your notification code instead of pass 
     a = state
-    print(a)
+#    print(a)
 
     time.sleep(5.0 - ((time.time() - starttime) % 5.0))
