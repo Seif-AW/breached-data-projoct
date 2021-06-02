@@ -1,11 +1,20 @@
-from os import stat_result
 import time
 import subprocess
 import json
 
 a = 0 
 
+def rep ():
+        msg = json.dumps(data)
+        new = "-"* 50
+        f = open("/home/dld/timer/report/breaches.txt", "+a")
+        f.write("\n new breaches found : \n"+new+"\n"+msg+"\n"+new*2)
+        f.close 
+
+link = 'http://52.151.252.60:9090/breaches.txt'
+
 starttime = time.time()
+
 while True:
     
     input = "hti.edu.eg"
@@ -13,10 +22,12 @@ while True:
     dehashed = subprocess.run(arg2, capture_output=True, shell=True, encoding="utf8")
     data = json.loads(dehashed.stdout)
     state = data['total']
-#    print(a)
+ 
     if state != a : 
-        pass # here to put your notification code instead of pass 
+        rep ()
+        send_req  = " curl --data chat_id='1348121058' --data 'text=You have a new breach , please check the following link: {}' 'https://api.telegram.org/bot1859447166:AAFczzEAR4lxmfX7cit83IWYPTUZ1uWbq70/sendMessage'".format(link)
+        p2 = subprocess.run(send_req ,shell=True)
+    
     a = state
-#    print(a)
-
-    time.sleep(5.0 - ((time.time() - starttime) % 5.0))
+    
+    time.sleep(30.0 - ((time.time() - starttime) % 30.0))
