@@ -43,7 +43,7 @@ def before_request():
     #     x = "the user is not assigned "
     #     return redirect(url_for('login'))
 
-@app.route('/', methods=['GET', 'POST'])
+#@app.route('/', methods=['GET', 'POST'])
 def login():
     session.clear()
     if request.method == 'POST':
