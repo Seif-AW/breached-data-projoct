@@ -1,0 +1,21 @@
+import subprocess
+import os
+import json
+
+
+input = "zeifoa5@gmail.com"
+
+arg2 = "curl 'https://api.dehashed.com/search?query={}' -u zeifoa5@gmail.com:i0xtde61tvcrmm4skwvx8atdrbv1zmed -H 'Accept: application/json'".format(input)
+
+dehashed = subprocess.call(arg2 ,shell=True ,text=True ,stdout=subprocess.PIPE)
+
+print(dehashed)
+#data= json.loads(dehashed.stdout)
+#email = data['entries'][0]['email']
+#passwd = data['entries'][0]['password']
+#hashed_passwd = data['entries'][0]['hashed_password']
+
+#phone = data['entries'][0]['phone']
+#dbname = data['entries'][0]['database_name']
+
+
