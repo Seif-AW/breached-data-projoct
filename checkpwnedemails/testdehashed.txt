@@ -1,2 +1,0 @@
-{"balance":93,"entries":[{"id":"21332472915","email":"zeifoa5@gmail.com","ip_address":"","username":"","password":"","hashed_password":"$2a$10$75LDuOfl9Ino4Je7UYH77O1qdOvrQDzqauShf37aypb770BCQpSmu","name":"seif","vin":"","address":"","phone":"201110723872","database_name":"swvl"}],"success":true,"took":"236µs","total":1}
-0
