@@ -39,9 +39,9 @@ class User:
         return f'<User: {self.username}>'
 
 users = []
-users.append(User(id=1, username='yahia', password='123'))
-users.append(User(id=2, username='seif', password='seif'))
-users.append(User(id=3, username='youssef', password='aa12'))
+users.append(User(id=1, username='yahia', password='XXX'))
+users.append(User(id=2, username='seif', password='XXX'))
+users.append(User(id=3, username='youssef', password='XXX'))
 
 
 app = Flask(__name__)
