@@ -37,9 +37,8 @@ class User:
         return f'<User: {self.username}>'
 
 users = []
-users.append(User(id=1, username='yahia', password='123'))
-users.append(User(id=2, username='seif', password='seif'))
-users.append(User(id=3, username='youssef', password='aa12'))
+users.append(User(id=1, username='user1', password='ayhaga'))
+
 
 
 app = Flask(__name__)
@@ -113,7 +112,7 @@ def email():
             hbpwd = jsbeautifier.beautify(hbpwd.stdout)
 
 # dehashed
-            arg2 = "curl 'https://api.dehashed.com/search?query={}' -u zeifoa5@gmail.com:i0xtde61tvcrmm4skwvx8atdrbv1zmed -H 'Accept: application/json'".format(input)
+            arg2 = "curl 'https://api.dehashed.com/search?query={}' -u <youremailaddress>:i0xtde61tvcrmm4skwvx8atdrbv1zmed -H 'Accept: application/json'".format(input)
             dehashed = subprocess.run(arg2, capture_output=True, shell=True, encoding="utf8")
             res = jsbeautifier.beautify(dehashed.stdout)
 # combining             
@@ -155,7 +154,7 @@ def Facebook():
                 res = "Name: " +str(name)+  "\nID : " +fb_id+ "\nphone number : "+phone
                 res_elk = res.replace('\n', '<br>')
 # dehashed
-                arg_dehashed = "curl 'https://api.dehashed.com/search?query={}' -u zeifoa5@gmail.com:i0xtde61tvcrmm4skwvx8atdrbv1zmed -H 'Accept: application/json'".format(phone)
+                arg_dehashed = "curl 'https://api.dehashed.com/search?query={}' -u <youremailaddress>:i0xtde61tvcrmm4skwvx8atdrbv1zmed -H 'Accept: application/json'".format(phone)
                 dehashed = subprocess.run(arg_dehashed, capture_output=True, shell=True, encoding="utf8")
                 res_dehashed = jsbeautifier.beautify(dehashed.stdout)                                
 
@@ -195,7 +194,7 @@ def org():
         try :
             uname = request.form["org"]
             inp = uname
-            arg2 = "curl 'https://api.dehashed.com/search?query={}' -u zeifoa5@gmail.com:i0xtde61tvcrmm4skwvx8atdrbv1zmed -H 'Accept: application/json'".format(inp)
+            arg2 = "curl 'https://api.dehashed.com/search?query={}' -u <youremailaddress>:i0xtde61tvcrmm4skwvx8atdrbv1zmed -H 'Accept: application/json'".format(inp)
             arg3 = "  | ~/go/bin/gron  | grep 'mail\|pass\|name' "
             total = arg2 + arg3
             filt = subprocess.run(total, stdout=subprocess.PIPE ,text=True ,shell=True)
